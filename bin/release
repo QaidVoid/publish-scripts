@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Wrapper to run publish-scripts via nushell.
+# Add this directory to your PATH, or install via nix profile install.
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+RELEASE_NU="$SCRIPT_DIR/../nu/release.nu"
+
+if ! command -v nu &>/dev/null; then
+    echo "error: nushell (nu) not found. Install it first: nix profile install nixpkgs#nushell" >&2
+    exit 1
+fi
+
+exec nu "$RELEASE_NU" "$@"

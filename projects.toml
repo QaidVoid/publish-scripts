@@ -1,0 +1,85 @@
+# publish-scripts project registry.
+# Each project configures its language, tag prefix, and release behavior.
+
+[defaults]
+tag_prefix = "v"
+changelog = true
+push = true
+github_release = true
+publish = false
+prerelease = false
+draft = false
+branch = "main"
+
+# ── Rust (package) ──────────────────────
+
+[projects.ghpulse]
+lang = "rust"
+tag_prefix = ""
+publish = true
+
+[projects.netinject]
+lang = "rust"
+tag_prefix = "v"
+publish = true
+
+[projects.compak]
+lang = "rust"
+tag_prefix = "v"
+publish = true
+
+[projects.releasekit]
+lang = "rust"
+
+[projects.zenity-rs]
+lang = "rust"
+publish = true
+
+[projects.zsync-rs]
+lang = "rust"
+tag_prefix = ""
+publish = true
+
+[projects.ouch]
+lang = "rust"
+tag_prefix = "v"
+
+# ── Rust (workspace) ────────────────────
+
+[projects.awsim]
+lang = "rust"
+type = "workspace"
+tag_prefix = ""
+
+[projects.onelf]
+lang = "rust"
+type = "workspace"
+tag_prefix = "onelf-v"
+
+[projects.dwarfs-rs]
+lang = "rust"
+type = "workspace"
+
+# ── TypeScript ──────────────────────────
+
+[projects.chromalink]
+lang = "typescript"
+
+[projects.dtrk]
+lang = "typescript"
+
+# ── Go ──────────────────────────────────
+
+[projects.seederella]
+lang = "go"
+
+# ── Zig ─────────────────────────────────
+
+[projects.glue]
+lang = "zig"
+
+# ── Shell / Misc ────────────────────────
+
+[projects.cargo-vendored]
+lang = "shell"
+tag_pattern = "v*-*"
